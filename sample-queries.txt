@@ -1,0 +1,69 @@
+1. Select all students born in 1990. (160)
+
+SELECT
+    *
+FROM
+    `students`
+WHERE
+    YEAR(`date_of_birth`) = 1990;
+
+2. Select all courses worth more than 10 credits. (479)
+
+SELECT
+    *
+FROM
+    `courses`
+WHERE
+    `cfu` > 10;
+
+3. Select all students older than 30.
+
+SELECT
+    *
+FROM
+    `students`
+WHERE
+    `date_of_birth` < DATE_SUB(CURDATE(), INTERVAL 30 YEAR);
+
+4. Select all courses held in the first semester of the first year of any degree. (286)
+
+SELECT
+    *
+FROM
+    `courses`
+WHERE
+    `period` = 'I semestre' AND `year` = 1;
+
+5. Select all exams held in the afternoon (after 14:00) of 20/06/2020. (21)
+
+SELECT
+    *
+FROM
+    `exams`
+WHERE
+    `date` = '2020-06-20' AND `hour` > '14:00:00';
+
+6. Select all Master's Degrees. (38)
+
+SELECT
+    *
+FROM
+    `degrees`
+WHERE
+    `level` = 'magistrale';
+
+7. How many departments are there in the university? (12)
+
+SELECT
+    COUNT(`id`)
+FROM
+    `departments`;
+
+8. How many teachers don't have a phone number? (50)
+
+SELECT
+    COUNT(`id`)
+FROM
+    `teachers`
+WHERE
+    `phone` IS NULL;
