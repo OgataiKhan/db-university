@@ -1,0 +1,51 @@
+1. Count how many students enrolled each year.
+
+SELECT
+    COUNT(`id`) AS `students_enrolled_each_year`,
+    YEAR(`enrolment_date`) AS `enrolment_year`
+FROM
+    `students`
+GROUP BY
+    `enrolment_year`
+ORDER BY
+    `enrolment_year`;
+
+2. Count the teachers who have their office in each building.
+
+SELECT
+    COUNT(`id`) AS `teachers_in_each_building`,
+    `office_address`
+FROM
+    `teachers`
+GROUP BY
+    `office_address`
+ORDER BY
+    `teachers_in_each_building`
+DESC
+    ;
+
+3. Calculate the average grade for each exam.
+
+SELECT
+    AVG(`vote`) AS `vote_average`,
+    `exam_id`
+FROM
+    `exam_student`
+GROUP BY
+    `exam_id`
+ORDER BY
+    `vote_average`
+DESC
+    ;
+
+4. Count how many degrees there are for each department.
+
+SELECT
+    COUNT(`id`) AS `degrees_per_department`,
+    `department_id`
+FROM
+    `degrees`
+GROUP BY
+    `department_id`
+ORDER BY
+    `department_id`;
