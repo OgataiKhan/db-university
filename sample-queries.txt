@@ -55,14 +55,14 @@ WHERE
 7. How many departments are there in the university? (12)
 
 SELECT
-    COUNT(`id`)
+    COUNT(`id`) AS 'departments_number'
 FROM
     `departments`;
 
 8. How many teachers don't have a phone number? (50)
 
 SELECT
-    COUNT(`id`)
+    COUNT(`id`) AS 'teachers_without_phone_number'
 FROM
     `teachers`
 WHERE
